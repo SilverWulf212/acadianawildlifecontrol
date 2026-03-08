@@ -28,6 +28,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* Prevent mobile browsers from forcing blue on tel: links */
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 /* Global focus-visible style */
 *:focus-visible {
   outline: 2px solid var(--color-gold);

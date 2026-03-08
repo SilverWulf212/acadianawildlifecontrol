@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'feral cat control Acadiana',
     'cat trapping service Louisiana',
   ],
+  alternates: {
+    canonical: '/feral-cat-removal',
+  },
   openGraph: {
     title: 'Feral Cat Removal Lafayette LA | Acadiana Wildlife Control',
     description: `Humane feral cat trapping and removal in Lafayette and Acadiana, LA. Professional live trapping services. Call ${BUSINESS.phone}.`,

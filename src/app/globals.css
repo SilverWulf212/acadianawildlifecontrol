@@ -3,7 +3,8 @@
 @theme {
   --color-bayou: #1B3A2D;
   --color-bayou-light: #2A5A45;
-  --color-gold: #D4A017;
+  --color-gold: #996D00;
+  --color-gold-bright: #D4A017;
   --color-gold-light: #E8B82E;
   --color-cypress: #8B4513;
   --color-cream: #FAF6F0;
@@ -25,4 +26,20 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* Global focus-visible style */
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

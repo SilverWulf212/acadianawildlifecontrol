@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     'soffit repair wildlife damage',
     'crawlspace exclusion Louisiana',
   ],
+  alternates: {
+    canonical: '/wildlife-exclusion',
+  },
   openGraph: {
     title: 'Wildlife Exclusion Lafayette LA | Acadiana Wildlife Control',
     description: `Professional wildlife exclusion and damage repair in Lafayette and Acadiana, LA. Permanent animal proofing solutions. Call ${BUSINESS.phone}.`,

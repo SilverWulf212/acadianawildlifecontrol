@@ -1,5 +1,3 @@
-'use client';
-
 import { BUSINESS } from '@/lib/constants';
 
 export default function MobileCallBar() {
@@ -7,7 +5,7 @@ export default function MobileCallBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <a
         href={BUSINESS.phoneHref}
-        className="flex items-center justify-center gap-3 bg-gold px-4 py-3.5 text-bayou shadow-[0_-4px_12px_rgba(0,0,0,0.15)] transition-colors active:bg-gold-light"
+        className="flex items-center justify-center gap-3 bg-gold-bright px-4 py-3.5 text-bayou shadow-[0_-4px_12px_rgba(0,0,0,0.15)] transition-colors active:bg-gold-light"
         aria-label={`Call Acadiana Wildlife Control at ${BUSINESS.phone}`}
       >
         {/* Phone Icon */}
@@ -15,7 +13,7 @@ export default function MobileCallBar() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-5 w-5 animate-pulse"
+          className="h-5 w-5 motion-safe:animate-pulse"
           aria-hidden="true"
         >
           <path

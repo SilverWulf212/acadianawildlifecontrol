@@ -9,17 +9,19 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Column 1 & 2: Navigation Links */}
+          <nav aria-label="Footer navigation">
           {/* Column 1: Quick Links */}
           <div>
             <h3 className="mb-4 text-lg font-bold text-gold font-[family-name:var(--font-heading)]">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-gold"
+                    className="inline-block py-1 text-sm text-white/70 transition-colors hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -29,16 +31,16 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Services */}
-          <div>
+          <div className="mt-8">
             <h3 className="mb-4 text-lg font-bold text-gold font-[family-name:var(--font-heading)]">
               Services
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/${service.slug}`}
-                    className="text-sm text-white/70 transition-colors hover:text-gold"
+                    className="inline-block py-1 text-sm text-white/70 transition-colors hover:text-gold"
                   >
                     {service.name}
                   </Link>
@@ -46,6 +48,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          </nav>
 
           {/* Column 3: Contact Info */}
           <div>
@@ -133,7 +136,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
           {/* Credentials */}
-          <div className="mb-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/50">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/70">
             <span>LA Permit #{BUSINESS.permit}</span>
             <span className="hidden sm:inline" aria-hidden="true">|</span>
             <span>NWCOA Member</span>
@@ -144,12 +147,12 @@ export default function Footer() {
           </div>
 
           {/* Disclaimer */}
-          <p className="mb-4 text-center text-xs font-medium text-danger/80">
+          <p className="mb-4 text-center text-xs font-medium text-red-400">
             {BUSINESS.disclaimer}
           </p>
 
           {/* Copyright */}
-          <p className="text-center text-xs text-white/40">
+          <p className="text-center text-xs text-white/60">
             &copy; {currentYear} {BUSINESS.name}. All rights reserved.
           </p>
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 
 type GalleryCategory =
   | 'all'
@@ -195,13 +195,19 @@ const FILTER_BUTTONS: { value: GalleryCategory; label: string }[] = [
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState<GalleryCategory>('all');
   const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
 
-  const filteredImages =
-    activeFilter === 'all'
-      ? GALLERY_IMAGES
-      : GALLERY_IMAGES.filter((img) => img.categories.includes(activeFilter));
+  const filteredImages = useMemo(
+    () =>
+      activeFilter === 'all'
+        ? GALLERY_IMAGES
+        : GALLERY_IMAGES.filter((img) => img.categories.includes(activeFilter)),
+    [activeFilter],
+  );
 
-  const openLightbox = useCallback((image: GalleryImage) => {
+  const openLightbox = useCallback((image: GalleryImage, trigger?: HTMLButtonElement) => {
+    if (trigger) triggerRef.current = trigger;
     setLightboxImage(image);
     document.body.style.overflow = 'hidden';
   }, []);
@@ -209,7 +215,16 @@ export default function GalleryPage() {
   const closeLightbox = useCallback(() => {
     setLightboxImage(null);
     document.body.style.overflow = '';
+    // Restore focus to the element that opened the lightbox
+    triggerRef.current?.focus();
   }, []);
+
+  // Focus the close button when lightbox opens
+  useEffect(() => {
+    if (lightboxImage && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [lightboxImage]);
 
   const navigateLightbox = useCallback(
     (direction: 'prev' | 'next') => {
@@ -250,7 +265,7 @@ export default function GalleryPage() {
                 key={btn.value}
                 type="button"
                 onClick={() => setActiveFilter(btn.value)}
-                className={`rounded-full px-5 py-2 text-sm font-bold transition-all active:scale-95 ${
+                className={`rounded-full px-5 py-3 text-sm font-bold transition-all active:scale-95 ${
                   activeFilter === btn.value
                     ? 'bg-bayou text-white shadow-md'
                     : 'bg-white text-bayou/70 shadow-sm hover:bg-bayou/10 hover:text-bayou'
@@ -267,7 +282,7 @@ export default function GalleryPage() {
               <button
                 key={img.id}
                 type="button"
-                onClick={() => openLightbox(img)}
+                onClick={(e) => openLightbox(img, e.currentTarget)}
                 className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-md transition-shadow hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
                 aria-label={`View full size: ${img.alt}`}
               >
@@ -327,6 +342,7 @@ export default function GalleryPage() {
         >
           {/* Close button */}
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={closeLightbox}
             className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"

@@ -80,7 +80,7 @@ export default function ServiceArea() {
         </div>
 
         {/* Additional note */}
-        <p className="mt-8 text-center text-sm text-bayou/50">
+        <p className="mt-8 text-center text-sm text-bayou/80">
           Don&apos;t see your town? Give us a call — we likely serve your area
           too.
         </p>

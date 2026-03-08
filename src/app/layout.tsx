@@ -20,6 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.acadianawildlifecontrol.com'),
   title: 'Acadiana Wildlife Control | Wildlife Removal Lafayette LA',
   description:
     'Professional wildlife removal in Lafayette, LA and all of Acadiana. Licensed trapper offering snake removal, raccoon trapping, opossum removal, nutria control, armadillo removal, rodent control, and wildlife exclusion. Serving Acadiana since 2003. Call 337-254-7475.',
@@ -37,12 +38,16 @@ export const metadata: Metadata = {
     'rodent control Lafayette',
     'feral cat removal',
   ],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Acadiana Wildlife Control | Wildlife Removal Lafayette LA',
     description:
       'Professional wildlife removal in Lafayette, LA and all of Acadiana. Licensed trapper since 2003. Call 337-254-7475.',
     type: 'website',
     locale: 'en_US',
+    images: ['/images/og-default.jpg'],
   },
 };
 
@@ -81,7 +86,6 @@ const jsonLd = {
       name: 'Louisiana Department of Wildlife and Fisheries',
     },
   },
-  sameAs: [],
   priceRange: '$$',
 };
 
@@ -99,8 +103,14 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased pb-16 md:pb-0">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:bg-gold-bright focus:text-bayou focus:px-4 focus:py-2 focus:text-lg"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <MobileCallBar />
       </body>

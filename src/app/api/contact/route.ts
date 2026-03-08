@@ -1,15 +1,5 @@
 import { NextResponse } from 'next/server';
-import { z } from 'zod';
-
-const contactSchema = z.object({
-  name: z.string().min(1).max(100),
-  phone: z.string().min(7).max(20),
-  address: z.string().min(1).max(200),
-  animalType: z.string().min(1),
-  location: z.string().min(1),
-  urgency: z.string().min(1),
-  details: z.string().max(2000).optional(),
-});
+import { contactSchema } from '@/lib/schemas';
 
 export async function POST(request: Request) {
   try {
@@ -24,6 +14,12 @@ export async function POST(request: Request) {
     }
 
     const data = result.data;
+
+    // Reject honeypot submissions silently
+    if (data.honeypot) {
+      // Return success to not tip off bots, but do nothing
+      return NextResponse.json({ success: true });
+    }
 
     // Log the submission (email integration can be added later)
     console.log('=== NEW CONTACT FORM SUBMISSION ===');

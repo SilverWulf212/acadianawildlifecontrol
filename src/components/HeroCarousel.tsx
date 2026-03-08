@@ -27,7 +27,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative h-[70vh] w-full overflow-hidden md:h-[80vh]"
+      className="relative h-[70dvh] w-full overflow-hidden md:h-[80dvh]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Hero image carousel"
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
               </p>
               <a
                 href={BUSINESS.phoneHref}
-                className="inline-flex items-center gap-3 rounded-lg bg-gold px-8 py-4 text-base font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95 md:text-lg"
+                className="inline-flex items-center gap-3 rounded-lg bg-gold-bright px-8 py-4 text-base font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95 md:text-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,19 +115,23 @@ export default function HeroCarousel() {
       </div>
 
       {/* Dot navigation */}
-      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-3">
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-1">
         {HERO_SLIDES.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 w-3 rounded-full border-2 border-white/70 transition-all duration-300 ${
-              index === current
-                ? 'scale-110 bg-gold border-gold'
-                : 'bg-white/30 hover:bg-white/60'
-            }`}
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label={`Go to slide ${index + 1}`}
             aria-current={index === current ? 'true' : undefined}
-          />
+          >
+            <span
+              className={`block h-3 w-3 rounded-full transition-all duration-300 ${
+                index === current
+                  ? 'scale-110 bg-gold-bright border-2 border-gold-bright'
+                  : 'bg-white/30 border-2 border-white/70 hover:bg-white/60'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

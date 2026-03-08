@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'nutria pest control Louisiana',
     'nutria damage repair',
   ],
+  alternates: {
+    canonical: '/nutria-control',
+  },
   openGraph: {
     title: 'Nutria Control Lafayette LA | Acadiana Wildlife Control',
     description: `Professional nutria trapping and control in Lafayette and Acadiana, LA. Licensed by LA Dept of Wildlife and Fisheries. Call ${BUSINESS.phone}.`,

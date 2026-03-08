@@ -45,7 +45,7 @@ export default function ServicesGrid() {
             >
               <Link
                 href={`/${service.slug}`}
-                className="group block h-full rounded-lg border-l-4 border-gold bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group block h-full rounded-lg border-l-4 border-gold-bright bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
               >
                 {/* Icon */}
                 <div className="mb-3 text-4xl" aria-hidden="true">

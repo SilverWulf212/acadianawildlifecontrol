@@ -6,6 +6,13 @@ import { BUSINESS } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'About Acadiana Wildlife Control | Bill Richards | Lafayette LA',
   description: `Learn about ${BUSINESS.owner}, owner of ${BUSINESS.name}. Licensed wildlife control operator serving Acadiana since ${BUSINESS.since}. Call ${BUSINESS.phone}.`,
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Acadiana Wildlife Control | Bill Richards',
+    description: `Learn about ${BUSINESS.owner}, owner of ${BUSINESS.name}. Licensed wildlife control operator serving Acadiana since ${BUSINESS.since}.`,
+  },
 };
 
 const CREDENTIALS = [
@@ -104,7 +111,7 @@ export default function AboutPage() {
               </div>
 
               {/* Tagline quote */}
-              <blockquote className="mt-8 relative border-l-4 border-gold pl-5">
+              <blockquote className="mt-8 relative border-l-4 border-gold-bright pl-5">
                 <p className="text-lg italic text-bayou/80 font-[family-name:var(--font-heading)] md:text-xl">
                   &ldquo;Urban trapping in Acadiana to remove unwanted wildlife
                   from your property &mdash; that&apos;s what we do, and we do it
@@ -170,7 +177,7 @@ export default function AboutPage() {
                 <h3 className="text-lg font-bold text-bayou font-[family-name:var(--font-heading)]">
                   {mem.name} Member
                 </h3>
-                <p className="mt-1 text-center text-sm text-bayou/60">
+                <p className="mt-1 text-center text-sm text-bayou/80">
                   {mem.fullName}
                 </p>
               </div>
@@ -200,7 +207,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={BUSINESS.phoneHref}
-              className="inline-flex items-center gap-3 rounded-lg bg-gold px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95"
+              className="inline-flex items-center gap-3 rounded-lg bg-gold-bright px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

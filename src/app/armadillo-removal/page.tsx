@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'armadillo under house Lafayette',
     'armadillo pest control',
   ],
+  alternates: {
+    canonical: '/armadillo-removal',
+  },
   openGraph: {
     title: 'Armadillo Removal Lafayette LA | Acadiana Wildlife Control',
     description: `Professional armadillo trapping and removal in Lafayette and Acadiana, LA. Stop yard damage. Call ${BUSINESS.phone}.`,

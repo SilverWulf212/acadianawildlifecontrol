@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'raccoon removal near me',
     'wildlife removal Lafayette Louisiana',
   ],
+  alternates: {
+    canonical: '/raccoon-removal',
+  },
   openGraph: {
     title: 'Raccoon Removal Lafayette LA | Acadiana Wildlife Control',
     description: `Raccoon trapping and removal in Lafayette and Acadiana, LA. Attic damage repair and exclusion. Call ${BUSINESS.phone}.`,

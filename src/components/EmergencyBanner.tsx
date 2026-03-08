@@ -2,7 +2,7 @@ import { BUSINESS } from '@/lib/constants';
 
 export default function EmergencyBanner() {
   return (
-    <div className="bg-gold">
+    <div className="bg-gold-bright">
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-3 lg:px-8">
         <span className="text-sm font-bold text-bayou md:text-base">
           Wildlife Emergency?
@@ -16,7 +16,7 @@ export default function EmergencyBanner() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="h-4 w-4 animate-pulse"
+            className="h-4 w-4 motion-safe:animate-pulse"
             aria-hidden="true"
           >
             <path

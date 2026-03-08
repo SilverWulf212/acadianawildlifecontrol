@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'opossum removal near me',
     'possum under deck Lafayette',
   ],
+  alternates: {
+    canonical: '/opossum-removal',
+  },
   openGraph: {
     title: 'Opossum Removal Lafayette LA | Acadiana Wildlife Control',
     description: `Professional opossum trapping and removal in Lafayette and Acadiana, LA. Humane methods. Call ${BUSINESS.phone}.`,

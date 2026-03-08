@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     'mouse removal Acadiana',
     'rat exterminator Lafayette Louisiana',
   ],
+  alternates: {
+    canonical: '/rodent-control',
+  },
   openGraph: {
     title: 'Rodent Control Lafayette LA | Acadiana Wildlife Control',
     description: `Professional rat and mouse removal in Lafayette and Acadiana, LA. Trapping, exclusion, and damage repair. Call ${BUSINESS.phone}.`,

@@ -87,7 +87,7 @@ export default function WhyBill() {
             </ul>
 
             {/* Tagline quote */}
-            <blockquote className="relative border-l-4 border-gold pl-5">
+            <blockquote className="relative border-l-4 border-gold-bright pl-5">
               <p className="text-lg italic text-bayou/80 font-[family-name:var(--font-heading)] md:text-xl">
                 &ldquo;Urban trapping in Acadiana to remove unwanted wildlife
                 from your property — that&apos;s what we do, and we do it

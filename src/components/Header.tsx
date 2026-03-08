@@ -29,6 +29,17 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen]);
+
   return (
     <header
       className={`sticky top-0 z-50 bg-bayou text-white transition-shadow duration-300 ${
@@ -53,7 +64,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-bayou-light hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-bayou-light hover:text-white focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
             >
               {link.label}
             </Link>
@@ -63,7 +74,7 @@ export default function Header() {
         {/* Desktop Call Button */}
         <a
           href={BUSINESS.phoneHref}
-          className="hidden items-center gap-2 rounded-lg bg-gold px-5 py-2.5 text-sm font-bold text-bayou shadow-md transition-all hover:bg-gold-light hover:shadow-lg active:scale-95 md:flex"
+          className="hidden items-center gap-2 rounded-lg bg-gold-bright px-5 py-2.5 text-sm font-bold text-bayou shadow-md transition-all hover:bg-gold-light hover:shadow-lg active:scale-95 md:flex"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +137,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-black/50 md:hidden"
+              className="fixed inset-0 z-[60] bg-black/50 md:hidden"
               onClick={() => setMobileOpen(false)}
               aria-hidden="true"
             />
@@ -137,7 +148,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed right-0 top-0 z-40 flex h-full w-72 flex-col bg-bayou shadow-2xl md:hidden"
+              className="fixed right-0 top-0 z-[60] flex h-full w-72 flex-col bg-bayou shadow-2xl md:hidden"
               aria-label="Mobile navigation"
             >
               <div className="flex h-full flex-col pt-20 pb-8 px-6">
@@ -173,7 +184,7 @@ export default function Header() {
                 >
                   <a
                     href={BUSINESS.phoneHref}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gold px-5 py-3 text-base font-bold text-bayou shadow-md transition-all hover:bg-gold-light active:scale-95"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gold-bright px-5 py-3 text-base font-bold text-bayou shadow-md transition-all hover:bg-gold-light active:scale-95"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +202,7 @@ export default function Header() {
                     Call {BUSINESS.phone}
                   </a>
 
-                  <p className="text-center text-xs text-white/50">
+                  <p className="text-center text-xs text-white/70">
                     LA Permit #{BUSINESS.permit}
                   </p>
                 </motion.div>
@@ -204,7 +215,7 @@ export default function Header() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.45 }}
-                  className="text-center text-xs text-white/30"
+                  className="text-center text-xs text-white/70"
                 >
                   Serving Acadiana Since {BUSINESS.since}
                 </motion.p>

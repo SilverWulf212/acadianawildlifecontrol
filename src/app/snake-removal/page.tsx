@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     'snake removal near me',
     'copperhead removal Lafayette',
   ],
+  alternates: {
+    canonical: '/snake-removal',
+  },
   openGraph: {
     title: 'Snake Removal Lafayette LA | Acadiana Wildlife Control',
     description: `Venomous and non-venomous snake removal in Lafayette and Acadiana, LA. Same-day emergency service. Call ${BUSINESS.phone}.`,

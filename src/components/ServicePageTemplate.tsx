@@ -94,7 +94,8 @@ export default function ServicePageTemplate({
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={BUSINESS.phoneHref}
-              className="inline-flex items-center gap-3 rounded-lg bg-gold px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95"
+              className="inline-flex items-center gap-3 rounded-lg bg-gold-bright px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
+              aria-label={`Call Acadiana Wildlife Control at ${BUSINESS.phone}`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +114,7 @@ export default function ServicePageTemplate({
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
             >
               Request Service
             </Link>
@@ -155,7 +156,7 @@ export default function ServicePageTemplate({
                   key={i}
                   className="rounded-xl bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-lg font-bold text-bayou">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-gold-bright text-lg font-bold text-bayou">
                     {i + 1}
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-bayou font-[family-name:var(--font-heading)]">
@@ -291,6 +292,7 @@ export default function ServicePageTemplate({
             <a
               href={BUSINESS.phoneHref}
               className="text-4xl font-bold text-gold transition-colors hover:text-gold-light font-[family-name:var(--font-heading)] md:text-5xl"
+              aria-label={`Call Acadiana Wildlife Control at ${BUSINESS.phone}`}
             >
               {BUSINESS.phone}
             </a>
@@ -299,7 +301,8 @@ export default function ServicePageTemplate({
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={BUSINESS.phoneHref}
-              className="inline-flex items-center gap-3 rounded-lg bg-gold px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95"
+              className="inline-flex items-center gap-3 rounded-lg bg-gold-bright px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
+              aria-label={`Call Acadiana Wildlife Control at ${BUSINESS.phone}`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -318,7 +321,7 @@ export default function ServicePageTemplate({
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -334,7 +337,7 @@ export default function ServicePageTemplate({
             </Link>
           </div>
 
-          <p className="mt-10 text-xs text-white/40">
+          <p className="mt-10 text-xs text-white/60">
             {BUSINESS.disclaimer}
           </p>
         </div>
@@ -363,7 +366,7 @@ export default function ServicePageTemplate({
                   <h3 className="mb-1 text-lg font-bold text-bayou font-[family-name:var(--font-heading)] group-hover:text-gold transition-colors">
                     {service.name}
                   </h3>
-                  <p className="text-sm text-bayou/60">{service.description}</p>
+                  <p className="text-sm text-bayou/80">{service.description}</p>
                 </Link>
               ))}
             </div>

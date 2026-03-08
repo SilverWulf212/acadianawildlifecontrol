@@ -32,6 +32,7 @@ export default function FinalCTA() {
           <a
             href={BUSINESS.phoneHref}
             className="text-4xl font-bold text-gold transition-colors hover:text-gold-light font-[family-name:var(--font-heading)] md:text-5xl"
+            aria-label="Call Acadiana Wildlife Control at 337-254-7475"
           >
             {BUSINESS.phone}
           </a>
@@ -42,7 +43,7 @@ export default function FinalCTA() {
           {/* Primary: Call Now */}
           <a
             href={BUSINESS.phoneHref}
-            className="inline-flex items-center gap-3 rounded-lg bg-gold px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95"
+            className="inline-flex items-center gap-3 rounded-lg bg-gold-bright px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,7 @@ export default function FinalCTA() {
           {/* Secondary: Contact Form */}
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-bold text-white transition-all hover:border-white hover:bg-white/10 active:scale-95 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bayou"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +81,7 @@ export default function FinalCTA() {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-10 text-xs text-white/40">
+        <p className="mt-10 text-xs text-white/60">
           {BUSINESS.disclaimer}
         </p>
       </div>

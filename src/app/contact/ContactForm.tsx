@@ -2,21 +2,9 @@
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { useState } from 'react';
 import { BUSINESS } from '@/lib/constants';
-
-const contactSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(100),
-  phone: z.string().min(7, 'Please enter a valid phone number').max(20),
-  address: z.string().min(1, 'Address or area is required').max(200),
-  animalType: z.string().min(1, 'Please select an animal type'),
-  location: z.string().min(1, 'Please select a location'),
-  urgency: z.string().min(1, 'Please select urgency'),
-  details: z.string().max(2000).optional(),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormData } from '@/lib/schemas';
 
 const ANIMAL_OPTIONS = [
   { value: '', label: 'Select animal type...' },
@@ -67,6 +55,7 @@ export default function ContactForm() {
       location: '',
       urgency: '',
       details: '',
+      honeypot: '',
     },
   });
 
@@ -302,11 +291,25 @@ export default function ContactForm() {
         )}
       </div>
 
+      {/* Honeypot - hidden from real users */}
+      <div className="absolute left-[-9999px]" aria-hidden="true">
+        <label htmlFor="_hp_field">
+          Do not fill this field
+          <input
+            id="_hp_field"
+            type="text"
+            autoComplete="off"
+            tabIndex={-1}
+            {...register('honeypot')}
+          />
+        </label>
+      </div>
+
       {/* Submit */}
       <button
         type="submit"
         disabled={submitStatus === 'submitting'}
-        className="w-full rounded-lg bg-gold px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-lg bg-gold-bright px-8 py-4 text-lg font-bold text-bayou shadow-lg transition-all hover:bg-gold-light hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {submitStatus === 'submitting' ? (
           <span className="inline-flex items-center gap-2">

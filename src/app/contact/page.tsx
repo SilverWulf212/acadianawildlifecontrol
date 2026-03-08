@@ -5,6 +5,13 @@ import ContactForm from './ContactForm';
 export const metadata: Metadata = {
   title: `Contact Acadiana Wildlife Control | ${BUSINESS.phone}`,
   description: `Contact ${BUSINESS.name} for wildlife removal in Acadiana. Call ${BUSINESS.phone} or fill out our online form. Available Dawn to Dusk, 7 Days a Week.`,
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: `Contact Acadiana Wildlife Control | ${BUSINESS.phone}`,
+    description: `Contact ${BUSINESS.name} for wildlife removal in Acadiana. Call ${BUSINESS.phone} or fill out our online form.`,
+  },
 };
 
 export default function ContactPage() {
@@ -60,7 +67,7 @@ export default function ContactPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/50">
+                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/80">
                       Phone
                     </span>
                   </div>
@@ -70,7 +77,7 @@ export default function ContactPage() {
                   >
                     {BUSINESS.phone}
                   </a>
-                  <p className="mt-1 text-sm text-bayou/60">
+                  <p className="mt-1 text-sm text-bayou/80">
                     Tap to call directly
                   </p>
                 </div>
@@ -88,7 +95,7 @@ export default function ContactPage() {
                       <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                       <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
-                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/50">
+                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/80">
                       Email
                     </span>
                   </div>
@@ -116,7 +123,7 @@ export default function ContactPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/50">
+                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/80">
                       Service Area
                     </span>
                   </div>
@@ -141,19 +148,19 @@ export default function ContactPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/50">
+                    <span className="text-sm font-semibold uppercase tracking-wider text-bayou/80">
                       Hours
                     </span>
                   </div>
                   <p className="text-base font-medium text-bayou">
                     Dawn to Dusk
                   </p>
-                  <p className="text-sm text-bayou/60">7 Days a Week</p>
+                  <p className="text-sm text-bayou/80">7 Days a Week</p>
                 </div>
 
                 {/* Divider */}
                 <div className="border-t border-bayou/10 pt-6">
-                  <p className="text-sm text-bayou/50">
+                  <p className="text-sm text-bayou/80">
                     {BUSINESS.disclaimer}
                   </p>
                 </div>
